@@ -25,6 +25,14 @@ Open a pull request adding a file under `cases/` named for the entry it concerns
 Case records live separately from the practices. Several incompatible reports can all be worth
 keeping even when none of them yet justifies changing a recommendation.
 
+## The evidence bar above is higher than the corpus meets
+
+The Evidence field asked for above — commands, output, a diff, a timeline — is not something the
+published entries themselves carry. Each entry's `evidence_note` is a description of what was
+observed, not an artifact anyone else can check. That is a known weakness of this corpus, not a
+hidden one, and it is not a reason to ask less of a contributed case record: a case record that
+actually meets the bar above is worth more than any entry currently published here.
+
 ## What gets merged, and what does not
 
 - **Evidence and analysis merges.** What happened, what you tried, what is still uncertain.

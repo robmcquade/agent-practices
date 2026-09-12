@@ -16,7 +16,8 @@ capabilities:
 enforcement:
   mechanism: A stated constraint, checked when a rule is proposed, that the document's net length
     or rule count does not grow
-  checks: Whether an addition landed without a paired removal
+  checks: Whether an addition landed without a paired removal, or landed by cutting a rule that
+    was still catching real failures instead of being rejected outright
   not_checked: >
     Whether the rule that was removed was the right one to cut, whether a genuinely load-bearing
     rule was cut only because it was easier to give up than to argue against the new addition, and
@@ -47,7 +48,11 @@ for the same limited attention as the new ones.
 
 **The practice:** adding a rule requires removing one, in the same change, at the same time.
 Whoever wants to add a rule has to find something in the document to cut to make room for it. That
-is a real cost, and it filters out additions that are not worth paying it.
+is a real cost, and it filters out additions that are not worth paying it. When nothing in the
+document is safe to cut — every candidate rule is still catching real failures — the addition is
+rejected outright. The ratio is never satisfied by removing a control to make room for something
+new; a rule that is still doing its job does not become cuttable just because something else wants
+the space.
 
 ## When to consult this
 
@@ -69,7 +74,8 @@ they were written for.
 The trade happens at write time, by the person proposing the addition, in the same change — not as
 a cleanup exercise scheduled for later that competes with everything else for priority and rarely
 happens. The cost of adding is visible immediately, to the person paying it, instead of deferred to
-someone else at an unspecified future date.
+someone else at an unspecified future date. If nothing in the document is safe to cut, what gets
+rejected is the addition — never a control, removed just to balance the ledger.
 
 ## When it helps
 
@@ -79,10 +85,14 @@ rather than looked up.
 
 ## What it costs, and when to skip it
 
-Genuinely valuable rules occasionally get cut to make room, with no guarantee the cut rule was the
-least valuable one in the document — only that it was the one someone was willing to give up in
-the moment. Its absence sometimes isn't noticed until the situation it used to catch happens
-again. The practice also has a specific failure mode: it rewards broad, vague rules over narrow,
+The stop condition narrows this risk but does not remove it: "safe to cut" is still a judgment call,
+made under pressure to land the new rule, by the same person who wants the addition to go through.
+A rule can be misjudged as no longer load-bearing and cut anyway, with no guarantee that was the
+least valuable rule in the document — only that it was the one someone convinced themselves was
+safe. Its absence sometimes isn't noticed until the situation it used to catch happens again. The
+honest cost on the other side is real too: some additions that would have been worth making are
+rejected outright because nothing was safe to cut, and the document does not get them. The practice
+also has a specific failure mode: it rewards broad, vague rules over narrow,
 specific ones, because a broad rule is cheaper to defend at cut time relative to how much it
 covers, while a precise rule is an easy target when someone needs room for something else — so the
 document can drift toward wording broad enough to need re-interpreting later, close to the problem
@@ -92,9 +102,13 @@ easier to hold in your head.
 
 ## How you can tell whether it worked
 
-The document's length or rule count stays roughly flat across many additions over time, and for
-each addition someone can point to what specific rule was cut to pay for it — not a placeholder
-deletion or a merge of two rules into a denser one.
+Length or rule count staying flat is not the test — that can hold while safety quietly degrades, by
+cutting real rules or by compressing two into one denser sentence. The test is whether a mistake a
+cut rule used to catch has recurred since it was removed: if one has, the ratio was paid for with the
+thing the document exists to prevent, and that counts as the practice failing regardless of what the
+line count shows. A second, cheaper signal: there is a visible record of additions that were
+rejected outright because nothing was safe to cut. If that count is always zero, the stop condition
+is not being enforced — only the ratio is.
 
 ## Alternatives considered and rejected
 

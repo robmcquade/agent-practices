@@ -16,12 +16,13 @@ enforcement:
   not_checked: >
     Whether the review was competent, and whether the dispatching prompt smuggled the author's
     conclusion back in through its framing
-evidence: reproduced-here
+evidence: observed-here
 evidence_note: >
   Repeatedly observed in one environment: reviews that followed the drafting confirmed the drafter,
   and the same model in a clean context on the same artifact raised objections the first pass had not.
 prior_art:
-  - Blind peer review conceals author identity from the reviewer
+  - Double-anonymous peer review conceals author identity from the reviewer; the more common
+    single-anonymous form does not
   - Separation-of-duties requirements generally forbid the author from approving their own work
 adds: The variable that matters is not who the reviewer is but what the reviewer was shown.
 ---
@@ -92,9 +93,18 @@ Skip it for small, reversible, low-cost work. Not everything needs a seat.
 
 ## How you can tell whether it worked
 
-Independent seats sometimes return findings that change the work. If every review from your
-"independent" reviewer has confirmed the author, the seat is not independent — that is the
-measurement, and it is available without any additional instrumentation.
+A confirming review proves nothing by itself — genuine independence is fully compatible with
+repeated agreement, whether because the work was sound or because the drafter and the reviewer share
+a blind spot. Don't read an agreement streak as evidence the seat is contaminated, and don't read it
+as evidence the seat is clean either.
+
+The direct test, where it's affordable: run the same artifact through a genuinely clean seat and
+through a seat that watched the drafting, and compare. A clean seat that raises something the
+contaminated one didn't is a real signal; running both every time is the cost that makes people skip
+it. Where that's not affordable, the fallback is a process check, not an outcome check: whether the
+reviewer's inputs were enumerable and were in fact the artifact alone — no drafting transcript, no
+author verdict — per the enforcement mechanism above. That confirms the seat was set up correctly; it
+does not confirm the review that resulted was any good.
 
 ## Alternatives considered and rejected
 
@@ -108,9 +118,10 @@ measurement, and it is available without any additional instrumentation.
 
 ## Prior art, and what this adds
 
-Blind peer review removes the author's *identity* from the reviewer's view, on the theory that
-identity biases judgment. Separation-of-duties controls forbid self-approval. Both are about who the
-reviewer is or is not.
+Double-anonymous peer review removes the author's *identity* from the reviewer's view, on the theory
+that identity biases judgment; the more common single-anonymous form conceals only the reviewer's
+identity from the author, and the reviewer knows exactly whose work it is. Separation-of-duties
+controls forbid self-approval. All of these are about who the reviewer is or is not.
 
 The addition is that for model reviewers the binding constraint is exposure, not identity — a
 reviewer who knows exactly whose work it is but has seen only the artifact is independent, and a

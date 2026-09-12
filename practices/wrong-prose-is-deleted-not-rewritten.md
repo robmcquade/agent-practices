@@ -35,7 +35,8 @@ prior_art:
     documentation worse off
 adds: Ruling prose defects out of the blocking calculus entirely — deletion is not just the
   preferred fix, it is the whole disposition, and an argument that the result reads "worse" cannot
-  reopen it — plus a stated line between prose and behavior.
+  reopen it — plus a stated line between prose and behavior, and a carve-out preserving verified
+  contract facts and security/invariant tripwires rather than deleting them.
 ---
 
 # Wrong prose is deleted, not rewritten
@@ -50,14 +51,17 @@ is what invites the next round of review, not what ends this one.
 
 **The practice:** delete the wrong prose and put nothing in its place. The author deletes on
 sight, before review — no softening, no hedge, no replacement sentence, no paragraph explaining
-what used to be there. Deletion cannot introduce a new false claim, and it always ends the
-finding.
+what used to be there. Outside the carve-out below, deletion cannot introduce a new false claim,
+and it ends the finding.
 
 Text a machine parses, an operational instruction someone follows, or a documented contract is
 behavior, not prose — it goes through ordinary review like any other change; it does not get the
-free deletion path. And never delete only a limitation while leaving the claim it limits
-standing — if the caveat was the correct part and the claim underneath it is what's wrong, the fix
-is to remove the claim, not to quietly drop the one sentence that qualified it.
+free deletion path. Preserve separately verified non-decaying contract facts and security or
+invariant tripwires the same way: where prose is the record of one of those, it is corrected or
+relocated, not deleted, even when the surrounding sentence was overbroad or stale — losing it can
+leave the code materially less safe to change. And never delete only a limitation while leaving the
+claim it limits standing — if the caveat was the correct part and the claim underneath it is what's
+wrong, the fix is to remove the claim, not to quietly drop the one sentence that qualified it.
 
 ## When to consult this
 
@@ -107,7 +111,7 @@ more than once for the same underlying complaint trends to zero.
 
 | Alternative | Why it was rejected |
 |---|---|
-| Correct the sentence in place | The correction is a new claim and draws the same scrutiny as the one it replaced, often consuming as much review effort as the original defect |
+| Correct the sentence in place | For an ordinary wrong claim, the correction is a new claim and draws the same scrutiny as the one it replaced, often consuming as much review effort as the original defect. Verified contract facts and security/invariant tripwires are the carved-out exception, where correcting or relocating in place is what the practice requires |
 | Flag it and let review negotiate a fix | Negotiation is the mechanism producing extra rounds; the disagreement is usually about tone or precision, not the underlying fact |
 | Mark it TODO or FIXME and move on | The known-wrong claim stays live and readable in the meantime, and the marker is itself prose that goes stale the same way |
 | Add a correction or caveat below the wrong line | Doubles the prose surface and leaves the original wrong claim in place for a reader who only sees the first sentence |
@@ -115,15 +119,17 @@ more than once for the same underlying complaint trends to zero.
 
 ## Prior art, and what this adds
 
-Google's documentation style guide advises reviewers to delete what they are certain is wrong and
-leave alone what is merely unclear, rather than trying to fix it during review. The same guidance
-still permits holding up a submission that leaves the documentation worse off, which keeps open the
-question of whether a deletion was good enough.
+Google's documentation style guide advises editors to delete text they are certain is wrong and
+leave alone what is merely unclear, rather than guessing at a fix. The same guidance still allows
+holding up a documentation change that would leave the docs worse off, which keeps open the question
+of whether a deletion was good enough.
 
-What this adds is closing that question: a prose defect, once deleted, never blocks and never buys
-another review round regardless of whether the resulting text reads as "worse" by some other
-measure — plus a stated boundary between prose, which this applies to, and behavior — operational
-instructions, contracts, machine-parsed strings — which does not get the same free pass.
+What this adds is closing that question for internal explanatory prose: a defect there, once
+deleted, never blocks and never buys another review round regardless of whether the resulting text
+reads as "worse" by some other measure — plus a stated boundary between prose, which this applies
+to, and behavior — operational instructions, contracts, machine-parsed strings — which does not get
+the same free pass, and a carve-out preserving verified contract facts and security/invariant
+tripwires rather than deleting them.
 
 ## Where this is most likely to be wrong
 

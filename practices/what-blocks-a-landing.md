@@ -29,10 +29,9 @@ prior_art:
   - Google's code review guidance marks certain comments as non-blocking by convention (a "nit,"
     left to the author's discretion), without stating a general test for where the blocking line
     falls
-  - Safety-critical review standards generally treat a finding as open only once it traces to a
-    stated requirement and is backed by objective evidence
-adds: A three-part conjunctive test usable in ordinary review, not only formally tracked review,
-  plus an explicit rule for when a pre-existing defect earns its way into blocking a change.
+adds: A general test for where the blocking line falls in the first place — a three-part
+  conjunctive check usable in ordinary review, not only formally tracked review — plus an explicit
+  rule for when a pre-existing defect earns its way into blocking a change.
 ---
 
 # A finding needs a reachable case
@@ -115,14 +114,13 @@ dispositions attached — not silence, and not a blocking pile.
 
 Google's code review conventions mark a class of comment as non-blocking by label, leaving it to
 the author whether to act on it — useful, but it does not say what makes something blocking in the
-first place, only that some comments are declared not to be. Review practice for safety-critical
-work generally treats a finding as open only once it traces to a requirement and is backed by
-objective evidence, which is closer to the test here, but it is usually scoped to formally tracked
-defects rather than everyday review.
+first place, only that some comments are declared not to be.
 
-What this adds is the same conjunctive test applied to ordinary review — cheap enough to ask of
-every finding, not only formally tracked ones — and an explicit rule for when a defect that
-predates the change earns its way into blocking it, rather than leaving that judgment implicit.
+What this adds to that convention is a general test for where the blocking line falls: a three-part
+conjunctive check — reachable case, stated requirement, connecting evidence — cheap enough to apply
+to every finding in ordinary review, not only formally tracked ones — plus an explicit rule for when
+a defect that predates the change earns its way into blocking it, rather than leaving that judgment
+implicit.
 
 ## Where this is most likely to be wrong
 

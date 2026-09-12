@@ -4,12 +4,13 @@ title: Review depth comes from cost, not subject matter
 situation: You are deciding how much scrutiny a piece of work needs before it lands.
 revision: 1
 scope: >
-  Applies to sizing review effort for any change, human or agent-authored. Works best where someone
-  or something has standing authority to raise the level; without that, the asymmetric rule below has
-  nothing to enforce it and is closer to a working preference than a mechanism.
+  Applies to sizing review effort for any change, human or agent-authored. Works best where any
+  reviewer touching the work — not only the one who set the original level — can raise it in a way
+  the author cannot override; without that, the asymmetric rule below has nothing to enforce it and
+  is closer to a working preference than a mechanism.
 capabilities:
   - A way to write the decision down before review starts, so it can be checked later
-  - Someone or something with standing authority to raise the level that an author cannot override
+  - Any reviewer's ability to raise the level, unilaterally, in a way the author cannot override
 enforcement:
   mechanism: >
     A short written statement of the specific failure being guarded against, recorded before the
@@ -17,7 +18,9 @@ enforcement:
   checks: That the statement exists and names a failure, not a topic, and that a raised level stands
   not_checked: >
     Whether the stated failure is the real one, whether the chosen level is actually proportionate to
-    it, and whether someone picked a narrow failure statement on purpose to keep the level low
+    it, whether someone picked a narrow failure statement on purpose to keep the level low, and
+    whether a given raise was itself warranted — nothing screens a raise for being mistaken or
+    automated before it becomes permanent
 evidence: observed-here
 evidence_note: >
   Converged in one environment after review effort tracked how alarming a change sounded rather than
@@ -98,12 +101,21 @@ that has a broader real failure mode nobody wrote down. The rule only constrains
 a failure is named; naming the wrong one is not caught by this practice.
 
 The asymmetry is the sharpest cost. Because a level can only go up, a level set too high by an
-overcautious first read can never be corrected back down under this rule — the only way out is a
-fresh review that sets a new level from scratch. That is a deliberate tradeoff: the practice accepts
-some amount of permanent over-review in exchange for making it impossible to quietly talk a level
-back down under pressure to ship. Skip the rule where that tradeoff is backward — for genuinely
-trivial, reversible work, forcing a written failure statement on everything is ceremony with nothing
-behind it.
+overcautious first read stays high for the life of that piece of work — there is no reset, fresh
+review or otherwise, that lowers it back down within that work. A new piece of work starts its own
+level from scratch, but that is a new assessment, not a correction to this one. This is a deliberate
+tradeoff: the practice accepts some amount of permanent over-review in exchange for making it
+impossible to quietly talk a level back down under pressure to ship.
+
+The raise right being unbounded is a second, separate cost, not just a consequence of the first: any
+single reviewer — including a mistaken one, or an automated one — can lock in a permanently elevated
+level with one call, and nothing in this practice screens the raise itself for whether it was
+warranted. That is accepted deliberately, as the price of removing the ability to talk a level back
+down; it is not free, and nothing here bounds it beyond ordinary social pressure not to raise levels
+carelessly.
+
+Skip the rule where that tradeoff is backward — for genuinely trivial, reversible work, forcing a
+written failure statement on everything is ceremony with nothing behind it.
 
 ## How you can tell whether it worked
 

@@ -25,8 +25,8 @@ evidence_note: >
   reconstructing state that the note could have stated directly.
 prior_art:
   - >
-    Google's Site Reliability Engineering guidance on incident management already records the
-    attempted fix that failed as a required part of incident documentation, distinct from the fix
+    Google's Site Reliability Engineering guidance on incident management calls for an incident
+    timeline that includes what responders tried, including attempts that failed, not only the fix
     that worked.
 adds: >
   The complete field list beyond the attempted-fix field, and the framing that the note is written
@@ -105,11 +105,11 @@ without re-deriving something the note should have stated.
 
 ## Prior art, and what this adds
 
-Google's Site Reliability Engineering guidance on incident management already records the attempted
-fix that failed as a distinct, required part of the documentation — that field is not new here. What
-this adds is the rest of the schema around it (exact identifiers, the next increment, what's waiting
-on a human, related work by ID) and the framing: write for a stranger, not for a future self assumed
-to remember.
+Google's Site Reliability Engineering guidance on incident management already calls for a timeline
+that includes what was tried and failed, not only the fix that worked — that field is not new here:
+"what was already tried that failed" is not something nobody writes down. What this adds is the rest
+of the schema around it (exact identifiers, the next increment, what's waiting on a human, related
+work by ID) and the framing: write for a stranger, not for a future self assumed to remember.
 
 ## Where this is most likely to be wrong
 
